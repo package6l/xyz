@@ -1,0 +1,26 @@
+package com.Selenium.Practice;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class BasicLoginDemo {
+  @Test(description="To test  basic functionality")
+  
+  public void verifytitle() {
+	  
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\SURYA\\PracticeProject\\Practice\\Drivers\\chromedriver.exe");
+	//  System.setProperty("webdriver.firefox.marionette", "C:\\Users\\SURYA\\PracticeProject\\Practice\\Drivers\\geckodriver.exe");
+	 // WebDriver browser= new FirefoxDriver();
+	WebDriver browser =new ChromeDriver();
+	
+	  browser.get("http://www.automationtestinghub.com/selenium-3-0-launch-firefox-with-geckodriver/");
+	 String x= browser.getTitle();
+	  Assert.assertEquals(x, "xyx");
+	  browser.close();
+  }
+  
+	
+}

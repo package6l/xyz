@@ -2,10 +2,13 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="selenium-cucumber"/>
 		</list>
 		<list key="name">
+			<item value="selenium-cucmber"/>
 		</list>
 		<list key="artifactId">
+			<item value="selenium-cucumber"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -44,6 +47,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\SURYA\PracticeProject\Practice\pom.xml"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -56,13 +60,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.Selenium.Practice"/>
 		</list>
 		<list key="groupId">
-			<item value="com.Selenium"/>
 		</list>
 		<list key="artifactId">
-			<item value="Practice"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

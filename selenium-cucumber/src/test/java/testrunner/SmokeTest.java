@@ -1,6 +1,12 @@
 package testrunner;
 
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -43,6 +49,10 @@ public void user_should_be_able_to_login() throws Exception {
 	String title = driver.getTitle();
 	if(title.contains("Inbox"))
 	{
+		TakesScreenshot img =(TakesScreenshot)driver;
+		 File src=img.getScreenshotAs(OutputType.FILE);
+		 File dest =new File("C:\\Users\\SURYA\\PracticeProject\\selenium-cucumber\\screenshot\\ss.png");
+		 FileUtils.copyFile(src, dest); 
 		Actions action =new Actions(driver);
 		WebElement target = driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[5]/div[1]/a"));
 		//WebElement	target1 =driver.findElement(By.xpath("//a[@href=\"https://accounts.google.com/Logout?hl=en&continue=https://mail.google.com/mail&service=mail&timeStmp=1522527655&secTok=.AG5fkS8AMl9GwMHraV59hrkhHlXFMOHWlg\"]"));
@@ -53,7 +63,9 @@ public void user_should_be_able_to_login() throws Exception {
 		signout.perform();
 		Thread.sleep(2000);
 		//driver.findElement(By.xpath("//a[@href="https://accounts.google.com/Logout?hl=en&continue=https://mail.google.com/mail&service=mail&timeStmp=1522527655&secTok=.AG5fkS8AMl9GwMHraV59hrkhHlXFMOHWlg"]").click();
-		//driver.findElement(By.linkText("Privacy")).click();
+		driver.findElement(By.linkText("Privacy")).click();
+
+		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"\t");
 		WebElement	target1 =driver.findElement(By.xpath("//*[@id=\"gb_71\"]"));
 		
 	target1.click();
